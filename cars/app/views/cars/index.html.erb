@@ -1,1 +1,27 @@
-<h1>This is an index page!</h1>
+<section>
+  <div class="container has-text-centered">
+    <h1 class="is-size-1">Car Inventory</h1>
+  </div>
+</section>
+
+
+
+<section>
+  <div class="container">
+
+    <%@cars.each do |car| %>
+
+      <p><strong>Make: </strong> <%=car.make %></p>
+      <p><strong>Model: </strong> <%=car.model %></p>
+      <p><strong>Transmission: </strong>: <%=car.transmission %></p>
+      <p><strong>Year: </strong> <%=car.year %></p>
+      <p><strong>MPG: </strong> <%=car.mpg %></p>
+      <p><strong>Price: </strong> <%=number_to_currency(car.price) %></p>
+      <%=link_to "Details",  car%>
+      <br>
+      <br>
+
+    <% end %>
+
+  </div>
+</section>

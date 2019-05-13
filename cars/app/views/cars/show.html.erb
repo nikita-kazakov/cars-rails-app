@@ -1,0 +1,20 @@
+<section>
+  <div class="container has-text-centered">
+    <h1 class="is-size-1"><%=@car.make%> - <%=@car.model%></h1>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+      <p><strong>Make: </strong> <%=@car.make %></p>
+      <p><strong>Model: </strong> <%=@car.model %></p>
+      <p><strong>Transmission: </strong>: <%=@car.transmission %></p>
+      <p><strong>Year: </strong> <%=@car.year %></p>
+      <p><strong>MPG: </strong> <%=@car.mpg %></p>
+      <p><strong>Price: </strong> <%=number_to_currency(@car.price) %></p>
+      <br>
+      <%=link_to "All Cars", root_path %>
+      <%=link_to "Edit",  %>
+  </div>
+</section>
