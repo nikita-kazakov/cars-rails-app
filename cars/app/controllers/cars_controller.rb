@@ -9,10 +9,23 @@ class CarsController < ApplicationController
   end
 
   def edit
+    @car = Car.find(params[:id])
   end
 
   def new
     @car = Car.new
+  end
+
+  def create
+    @car = Car.new(params.require(:car).permit(:make, :model))
+    @car.save
+    redirect_to cars_path
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
+    redirect_to cars_path
   end
 
   def update
