@@ -1,7 +1,6 @@
 
 <%=render 'nav' %>
 
-<%=link_to "Create New Car", new_car_path%>
 <section>
   <div class="container has-text-centered">
     <h1 class="is-size-1">Car Inventory</h1>
@@ -12,6 +11,8 @@
 
 <section>
   <div class="container">
+
+    <%=link_to "Create New Car", new_car_path %>
 
     <%@cars.each do |car| %>
 
