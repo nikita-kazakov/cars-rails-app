@@ -1,0 +1,16 @@
+<%if @car.errors.any? %>
+  <div class="py-5 text-center" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="mb-3 text-danger">You Have <%=@car.errors.count %> Errors</h1>
+          <ul class="list-group list-group-flush">
+            <%@car.errors.full_messages.each do |error| %>
+              <li class="list-group-item"><i class="fa mr-2 fa-exclamation-triangle text-danger"></i><%=error %></li>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<%end %>

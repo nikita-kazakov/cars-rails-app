@@ -18,8 +18,12 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(params.require(:car).permit(:make, :model, :transmission, :year, :cylinders, :mpg, :price, :image))
-    @car.save
-    redirect_to cars_path
+    if @car.save
+      redirect_to cars_path
+    else
+      render :new
+    end
+
   end
 
   def destroy
@@ -30,8 +34,13 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @car.update(params.require(:car).permit(:make, :model, :transmission, :year, :cylinders, :mpg, :price, :image))
-    redirect_to @car
+
+    if @car.update(params.require(:car).permit(:make, :model, :transmission, :year, :cylinders, :mpg, :price, :image))
+      redirect_to @car
+    else
+      render :edit
+
+    end
 
     #Below is the quickest way to update but with FORBIDDEN FAILURE.
     #fail
