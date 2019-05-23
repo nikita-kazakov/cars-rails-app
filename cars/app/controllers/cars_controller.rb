@@ -17,7 +17,7 @@ class CarsController < ApplicationController
   end
 
   def create
-    @car = Car.new(params.require(:car).permit(:make, :model))
+    @car = Car.new(params.require(:car).permit(:make, :model, :transmission, :year, :cylinders, :mpg, :price, :image))
     @car.save
     redirect_to cars_path
   end
@@ -30,7 +30,7 @@ class CarsController < ApplicationController
 
   def update
     @car = Car.find(params[:id])
-    @car.update(params.require(:car).permit(:make, :model))
+    @car.update(params.require(:car).permit(:make, :model, :transmission, :year, :cylinders, :mpg, :price, :image))
     redirect_to @car
 
     #Below is the quickest way to update but with FORBIDDEN FAILURE.

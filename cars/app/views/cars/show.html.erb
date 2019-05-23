@@ -7,7 +7,7 @@
   <div class="py-5" >
     <div class="container border">
       <div class="row">
-        <div class="col-md-4 d-flex flex-row justify-content-center align-items-center"><%=image_tag("2019_hyundai_kona.jpg", class:"img-fluid d-block") %></div>
+        <div class="col-md-4 d-flex flex-row justify-content-center align-items-center"><%=image_tag(@car.image, class:"img-fluid d-block") %></div>
         <div class="col-md-8">
           <h3 class=""><%=@car.make%> <%=@car.model%></h3>
           <div class="row">
