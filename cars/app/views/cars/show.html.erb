@@ -1,8 +1,73 @@
 <section>
   <div class="container has-text-centered">
-    <h1 class="is-size-1"><%=@car.make%> - <%=@car.model%></h1>
+    <h1 class="is-size-1">Show Page</h1>
   </div>
 </section>
+
+  <div class="py-5" >
+    <div class="container border">
+      <div class="row">
+        <div class="col-md-4 d-flex flex-row justify-content-center align-items-center"><%=image_tag("2019_hyundai_kona.jpg", class:"img-fluid d-block") %></div>
+        <div class="col-md-8">
+          <h3 class=""><%=@car.make%> <%=@car.model%></h3>
+          <div class="row">
+            <div class="col-md-12 d-flex justify-content-start flex-wrap flex-row">
+              <div class="row mr-2">
+                <div class="col-md-12">
+                  <p class="text-uppercase text-muted mb-0">Transmission</p>
+                  <p><%=@car.transmission %></p>
+                </div>
+              </div>
+              <div class="row mr-2">
+                <div class="col-md-12">
+                  <p class="text-uppercase text-muted mb-0">Year</p>
+                  <p><%=@car.year %></p>
+                </div>
+              </div>
+              <div class="row mr-2">
+                <div class="col-md-12">
+                  <p class="text-uppercase text-muted mb-0">Cylinders</p>
+                  <p><%=@car.cylinders %></p>
+                </div>
+              </div>
+              <div class="row mr-2">
+                <div class="col-md-12">
+                  <p class="text-uppercase text-muted mb-0">MPG</p>
+                  <p><%=@car.mpg %></p>
+                </div>
+              </div>
+              <div class="row mr-2">
+                <div class="col-md-12">
+                  <p class="text-uppercase text-muted mb-0">Price</p>
+                  <p><%=number_to_currency(@car.price) %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <p class="lead" style="">The Kona isn't perfect, but in a segment full of compromises it offers a great combination of comfort, practicality, fun and technology, all wrapped up in a package that feels firmly put together. </p>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-md-12">
+          <div class="btn-group">
+            <%=link_to("All Cars", cars_path, class:"btn btn-primary mr-2") %>
+            <%=link_to("Edit", edit_car_path, class:"btn btn-primary mr-2") %>
+            <%=link_to("Delete", car_path, method: :delete, class:"btn btn-primary mr-2") %>
+            <a href="#" class="btn btn-primary mr-2">Placeholder</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
 
 
 <section>
